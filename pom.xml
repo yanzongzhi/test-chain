@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.test.chain</groupId>
+    <artifactId>test-chain</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>eureka-server</module>
+        <module>spring-admin</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+
+        <!--项目编码-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!--framerWork版本-->
+        <com.shinho.framework.version>1.0.5-SNAPSHOT</com.shinho.framework.version>
+        <com.xsy.retail.chain.framework.version>1.0-SNAPSHOT</com.xsy.retail.chain.framework.version>
+        <com.xsy.retail.analysis.version>1.0-SNAPSHOT</com.xsy.retail.analysis.version>
+        <com.xsy.retail.goods.business.version>1.0-SNAPSHOT</com.xsy.retail.goods.business.version>
+        <com.xsy.retail.goods.core.version>1.0-SNAPSHOT</com.xsy.retail.goods.core.version>
+        <com.xsy.retail.goods.client.version>1.0-SNAPSHOT</com.xsy.retail.goods.client.version>
+        <com.xsy.retail.order.version>1.0-SNAPSHOT</com.xsy.retail.order.version>
+        <com.xsy.retail.message.version>1.0-SNAPSHOT</com.xsy.retail.message.version>
+        <com.xsy.retail.user.version>1.0-SNAPSHOT</com.xsy.retail.user.version>
+        <com.xsy.retail.basicdata.version>1.0-SNAPSHOT</com.xsy.retail.basicdata.version>
+        <com.xsy.retail.warehouse.version>1.0.0-SNAPSHOT</com.xsy.retail.warehouse.version>
+
+
+
+        <!--maven配置-->
+        <maven.test.skip>true</maven.test.skip>
+        <maven-compiler-plugin.version>3.6.2</maven-compiler-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
+
+        <!-- mybatis -->
+        <mybatis-spring-boot-starter.version>1.3.1</mybatis-spring-boot-starter.version>
+        <org.mybatis.mybatis.version>3.4.5</org.mybatis.mybatis.version>
+
+        <!--Start mybatis 分页插件-->
+        <pagehelper.version>5.1.2</pagehelper.version>
+        <pagehelper-spring-boot-starter.version>1.2.3</pagehelper-spring-boot-starter.version>
+
+
+        <!-- spring-boot&spring-cloud -->
+        <spring-boot.version>1.5.13.RELEASE</spring-boot.version>
+        <spring-cloud-dependencies.version>Edgware.SR3</spring-cloud-dependencies.version>
+        <spring-cloud-starter-eureka-server.version>1.4.4.RELEASE</spring-cloud-starter-eureka-server.version>
+        <spring-cloud-starter-feign.version>1.4.4.RELEASE</spring-cloud-starter-feign.version>
+        <spring.boot.admin.version>1.5.7</spring.boot.admin.version>
+        <com.netflix.feign.okhttp.version>RELEASE</com.netflix.feign.okhttp.version>
+        <spring.boot.web.socket.version>1.5.9.RELEASE</spring.boot.web.socket.version>
+
+        <!-- DB -->
+        <mysql-conector-java.version>5.1.44</mysql-conector-java.version>
+
+        <!-- Json util -->
+        <com.google.code.gson.version>2.8.2</com.google.code.gson.version>
+        <fastjson.version>1.2.46</fastjson.version>
+
+        <!-- springframework -->
+        <org.springframework.spring-test.version>4.3.6.RELEASE</org.springframework.spring-test.version>
+        <junit.version>4.12</junit.version>
+
+        <!-- druid -->
+        <com.alibaba.druid.version>1.1.9</com.alibaba.druid.version>
+        <com.alibaba.druid.spring.boot.starter.version>1.1.9</com.alibaba.druid.spring.boot.starter.version>
+
+        <!-- netty -->
+        <netty.version>4.1.22.Final</netty.version>
+
+        <!-- jsqlparser -->
+        <com.github.jsqlparser.jsqlparser.version>1.1</com.github.jsqlparser.jsqlparser.version>
+
+        <!-- springweb -->
+        <org.springframework.spring.web.version>4.3.17.RELEASE</org.springframework.spring.web.version>
+
+        <!-- Redis&Jedis -->
+        <org.redisson.version>3.5.0</org.redisson.version>
+        <redis.clients.jedis.version>2.9.0</redis.clients.jedis.version>
+
+        <!-- Apache工具组件 -->
+        <commons-lang3.version>3.5</commons-lang3.version>
+        <guava.version>20.0</guava.version>
+
+        <!--简拼包-->
+        <com.belerweb.pinyin4j.version>2.5.0</com.belerweb.pinyin4j.version>
+
+        <!--poi-->
+        <org.apache.poi.version>3.17</org.apache.poi.version>
+        <org.apache.poi.ooxml.version>3.17</org.apache.poi.ooxml.version>
+
+        <!--hutool-->
+        <cn.hutool.poi.version>4.1.1</cn.hutool.poi.version>
+
+        <!--jpush-->
+        <cn.jpush.client.version>3.3.5</cn.jpush.client.version>
+
+        <!--mail-->
+        <org.springframework.boot.mail.version>2.0.2.RELEASE</org.springframework.boot.mail.version>
+
+    </properties>
+
+
+    <!-- 仓库地址 -->
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://10.32.1.103:8081/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
+    <!-- 插件地址 -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://10.32.1.103:8081/repository/maven-public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <!-- 设定持续集成发布包服务器 -->
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Team Nexus Release Repository</name>
+            <url>http://10.32.1.103:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Team Nexus Snapshot Repository</name>
+            <url>http://10.32.1.103:8081/repository/maven-snapshots</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- springboot & springcloud -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-websocket</artifactId>
+                <version>${spring.boot.web.socket.version}</version>
+            </dependency>
+
+            <!-- 客户端发现模块 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-eureka</artifactId>
+                <version>${spring-cloud-starter-eureka-server.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-feign</artifactId>
+                <version>${spring-cloud-starter-feign.version}</version>
+            </dependency>
+
+            <!-- mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${org.mybatis.mybatis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-conector-java.version}</version>
+            </dependency>
+
+
+            <!-- 分页插件pagehelper -->
+            <!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-spring-boot-starter.version}</version>
+            </dependency>
+            <!-- 分页插件pagehelper -->
+
+            <!-- 聚合监控 -->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server</artifactId>
+                <version>${spring.boot.admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server-ui</artifactId>
+                <version>${spring.boot.admin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring.boot.admin.version}</version>
+            </dependency>
+
+
+            <!-- 测试 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${org.springframework.spring-test.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+
+
+            <!-- 阿里巴巴连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${com.alibaba.druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${com.alibaba.druid.spring.boot.starter.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+            <!-- fastjson & gson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${com.google.code.gson.version}</version>
+            </dependency>
+
+
+            <!-- SQL语法解释 -->
+            <dependency>
+                <groupId>com.github.jsqlparser</groupId>
+                <artifactId>jsqlparser</artifactId>
+                <version>${com.github.jsqlparser.jsqlparser.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.netflix.feign</groupId>
+                <artifactId>feign-okhttp</artifactId>
+                <version>${com.netflix.feign.okhttp.version}</version>
+            </dependency>
+
+            <!-- Spring-web -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${org.springframework.spring.web.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <!-- Redis & Jedis 配置-->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${redis.clients.jedis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${org.redisson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.belerweb</groupId>
+                <artifactId>pinyin4j</artifactId>
+                <version>${com.belerweb.pinyin4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${org.apache.poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${org.apache.poi.ooxml.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-poi</artifactId>
+                <version>${cn.hutool.poi.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+
+                <!--&lt;!&ndash; 源码插件 &ndash;&gt;-->
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-source-plugin</artifactId>-->
+                    <!--<version>${maven-source-plugin.version}</version>-->
+                    <!--<configuration>-->
+                        <!--<attach>true</attach>-->
+                    <!--</configuration>-->
+                    <!--<executions>-->
+                        <!--<execution>-->
+                            <!--<id>attach-sources</id>-->
+                            <!--<goals>-->
+                                <!--<goal>jar</goal>-->
+                            <!--</goals>-->
+                        <!--</execution>-->
+                    <!--</executions>-->
+                <!--</plugin>-->
+
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <configuration>
+                        <fork>true</fork>
+                        <includeSystemScope>true</includeSystemScope>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                   </executions>
+                </plugin>
+
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-resources-plugin</artifactId>-->
+                    <!--<version>${maven-resources-plugin.version}</version>-->
+                    <!--<configuration>-->
+                        <!--<delimiters>-->
+                            <!--<delimiter>${resource.delimiter}</delimiter>-->
+                        <!--</delimiters>-->
+                        <!--<useDefaultDelimiters>false</useDefaultDelimiters>-->
+                    <!--</configuration>-->
+                <!--</plugin>-->
+            </plugins>
+        </pluginManagement>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+</project>
