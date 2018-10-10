@@ -1,15 +1,15 @@
-package com.xsy.retail.chain.admin;
+package com.xsy.retail.chain.config;
 
-import de.codecentric.boot.admin.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
 
 @SpringBootApplication(scanBasePackages = {"com.xsy.retail.chain","com.shinho"})
-@EnableAdminServer
-public class SpringAdminServerApplication {
+@EnableConfigServer
+public class SpringConfigServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringAdminServerApplication.class);
+        SpringApplication.run(SpringConfigServerApplication.class);
     }
 }
